@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Tests</title>
+    
+    <!-- External Stylesheets (Tasks 3 & 4) -->
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Consolidated Internal Stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333333;
+        }
+
+        header {
+            background-color: #0f4c4a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Task 2: Navigation Bar Styling */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #005f73;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav li a {
+            display: inline-block;
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #0a9396;
+            color: #e9d8a6;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        section {
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #005f73;
+            margin-top: 0;
+        }
+
+        ol, ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        dt {
+            font-weight: bold;
+            color: #0f4c4a;
+            margin-top: 12px;
+            font-size: 1.05rem;
+        }
+
+        dd {
+            margin-left: 0;
+            margin-bottom: 12px;
+            color: #555555;
+        }
+
+        footer {
+            background-color: #0f4c4a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Laboratory Tests</h1>
+    <p>Accurate Diagnostics for Better Healthcare</p>
+</header>
+
+<!-- Task 2: Navigation Links Structure -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+        <li><a href="test-price-table.html">Pricing</a></li>
+        <li><a href="patient-registration.html">Registration</a></li>
+        <li><a href="health-information.html">Info Portal</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <section>
+        <h2>Patient Testing Process</h2>
+        <ol>
+            <li>Patient Registration</li>
+            <li>Sample Collection</li>
+            <li>Laboratory Testing</li>
+            <li>Report Generation</li>
+            <li>Doctor Consultation</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Types of Laboratory Tests</h2>
+        <ul>
+            <li>Blood Tests</li>
+            <li>Urine Tests</li>
+            <li>Thyroid Profile</li>
+            <li>Liver Function Test</li>
+            <li>Kidney Function Test</li>
+            <li>Lipid Profile</li>
+            <li>Diabetes Tests</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Test Abbreviations</h2>
+        <dl>
+            <dt>CBC</dt>
+            <dd>Complete Blood Count &mdash; measures <i>red cells, white cells, and platelets</i> to check overall health.</dd>
+
+            <dt>HbA1c</dt>
+            <dd>Average blood sugar level over the past <mark>2-3 months</mark>, used to monitor diabetes.</dd>
+
+            <dt>LFT</dt>
+            <dd>Liver Function Test &mdash; checks how well the <i>liver</i> is working.</dd>
+
+            <dt>KFT</dt>
+            <dd>Kidney Function Test &mdash; checks how well the <i>kidneys</i> filter waste from the blood.</dd>
+
+            <dt>ECG</dt>
+            <dd>Electrocardiogram &mdash; records the <mark>electrical activity</mark> of the heart.</dd>
+        </dl>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Clinical Laboratory. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

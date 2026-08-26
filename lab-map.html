@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5: Interactive Image Map</title>
+    
+    <!-- External Theme Stylesheet (Task 3) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Consolidated Internal Stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Task 2: Navigation Bar Styling */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #005f73;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav li a {
+            display: inline-block;
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #0a9396;
+            color: #e9d8a6;
+            text-decoration: underline;
+        }
+
+        /* Container and Content Styling */
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .map-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            border: 1px solid #999;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info-section {
+            margin-top: 30px;
+            border-top: 2px solid #333;
+            padding-top: 15px;
+        }
+
+        .info-card {
+            background: #f0f4f8;
+            border-left: 4px solid #0056b3;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .info-card h3 {
+            margin: 0 0 5px 0;
+            color: #0056b3;
+        }
+
+        .info-card p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Task 2 Navigation Links Structure -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+            <li><a href="test-price-table.html">Pricing</a></li>
+            <li><a href="patient-registration.html">Registration</a></li>
+            <li><a href="health-information.html">Info Portal</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Interactive Urine Test Strip Map</h2>
+        <p>Click any test pad on the strip image below to jump directly to its description.</p>
+
+        <div class="map-wrapper">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='120' viewBox='0 0 600 120'><rect width='600' height='120' fill='%23e0e0e0'/><rect x='30' y='45' width='540' height='30' rx='4' fill='%23ffffff' stroke='%23aaaaaa'/><rect x='60' y='35' width='40' height='50' rx='3' fill='%234caf50'/><text x='80' y='105' font-family='Arial' font-size='11' text-anchor='middle'>Glucose</text><rect x='160' y='35' width='40' height='50' rx='3' fill='%232196f3'/><text x='180' y='105' font-family='Arial' font-size='11' text-anchor='middle'>Protein</text><rect x='260' y='35' width='40' height='50' rx='3' fill='%23f44336'/><text x='280' y='105' font-family='Arial' font-size='11' text-anchor='middle'>Blood</text><rect x='360' y='35' width='40' height='50' rx='3' fill='%239c27b0'/><text x='380' y='105' font-family='Arial' font-size='11' text-anchor='middle'>Ketone</text><rect x='460' y='35' width='40' height='50' rx='3' fill='%23ff9800'/><text x='480' y='105' font-family='Arial' font-size='11' text-anchor='middle'>pH</text></svg>" 
+                 alt="Urine Test Strip" 
+                 usemap="#test-strip-map" 
+                 width="600" 
+                 height="120">
+        </div>
+
+        <map name="test-strip-map">
+            <area shape="rect" coords="60,35,100,85" href="#glucose" alt="Glucose Pad" title="Glucose Pad">
+            <area shape="rect" coords="160,35,200,85" href="#protein" alt="Protein Pad" title="Protein Pad">
+            <area shape="rect" coords="260,35,300,85" href="#blood" alt="Blood Pad" title="Blood Pad">
+            <area shape="rect" coords="360,35,400,85" href="#ketone" alt="Ketone Pad" title="Ketone Pad">
+            <area shape="rect" coords="460,35,500,85" href="#ph" alt="pH Pad" title="pH Pad">
+        </map>
+
+        <div class="info-section">
+            <div class="info-card" id="glucose">
+                <h3>Glucose Pad</h3>
+                <p>Detects the presence of glucose (sugar) in urine. Normal level: Negative.</p>
+            </div>
+
+            <div class="info-card" id="protein">
+                <h3>Protein Pad</h3>
+                <p>Screens for elevated protein levels (proteinuria). Normal level: Negative or Trace.</p>
+            </div>
+
+            <div class="info-card" id="blood">
+                <h3>Blood Pad</h3>
+                <p>Detects red blood cells or hemoglobin in urine. Normal level: Negative.</p>
+            </div>
+
+            <div class="info-card" id="ketone">
+                <h3>Ketone Pad</h3>
+                <p>Measures acetoacetic acid from fat breakdown. Normal level: Negative.</p>
+            </div>
+
+            <div class="info-card" id="ph">
+                <h3>pH Pad</h3>
+                <p>Measures urine acidity or alkalinity. Normal range: 5.0 to 8.0.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

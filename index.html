@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Laboratory Management System</title>
+    
+    <!-- External Layout and Theme Stylesheets (Tasks 3, 9 & 10) -->
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Consolidated Internal Stylesheet -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+        }
+
+        /* Task 2: Navigation Bar Styling */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #005f73;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav li a {
+            display: inline-block;
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #0a9396;
+            color: #e9d8a6;
+            text-decoration: underline;
+        }
+
+        /* Task 9 Layout & Task 4 Sidebar Styling */
+        .main-wrapper {
+            display: flex;
+            max-width: 1200px;
+            margin: 30px auto;
+            gap: 20px;
+            padding: 0 15px;
+        }
+
+        .content-area {
+            flex: 3;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #00a8cc;
+            padding-bottom: 8px;
+            color: #002b5b;
+        }
+
+        footer {
+            background-color: #1a252c;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 40px;
+            border-top: 3px solid #00a8cc;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Task 1: Inline CSS Header -->
+    <header style="background-color: #003366; color: #ffffff; padding: 25px; border-bottom: 5px solid #00a8cc; text-align: center;">
+        <h1 style="color: #ffffff; margin: 0; font-family: Arial, sans-serif;">Apex Clinical Diagnostics</h1>
+        <p style="color: #e0f2fe; font-style: italic; margin-top: 8px; font-size: 1.1rem; text-align: center;">Precise Testing • Reliable Results • Care First</p>
+    </header>
+
+    <!-- Task 2: Formatted Navigation List -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+            <li><a href="test-price-table.html">Pricing</a></li>
+            <li><a href="patient-registration.html">Registration</a></li>
+            <li><a href="health-information.html">Info Portal</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Task 9: Flexbox Structural Layout -->
+    <div class="main-wrapper">
+        <article class="content-area">
+            <h2>Welcome to Our Laboratory</h2>
+            <p>We provide accurate and reliable diagnostic testing services for patients, doctors, and laboratory technicians.</p>
+            
+            <!-- Task 10 Highlight Box -->
+            <div class="offer-box">
+                <h2>Special Health Package Offer!</h2>
+                <p>Get a 20% discount on complete full-body health checkup packages this month.</p>
+            </div>
+        </article>
+
+        <!-- Task 4: Styled Sidebar Card -->
+        <aside class="sidebar">
+            <h3>Lab Information</h3>
+            <p><strong>Timings:</strong></p>
+            <p>Monday to Saturday: 8:00 AM - 8:00 PM</p>
+            <p>Sunday: Emergency Only</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Clinical Laboratory. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

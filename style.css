@@ -1,0 +1,78 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #2b2d42;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #002b5b;
+    font-weight: 600;
+}
+footer {
+    background-color: #1a252c;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 40px;
+    border-top: 3px solid #00a8cc;
+}
+footer a {
+    color: #80ed99;
+    text-decoration: none;
+}
+.sidebar-card {
+    border: 1px solid #dcdde1;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    background-color: #ffffff;
+    width: 250px;
+}
+.sidebar-card h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #00a8cc;
+    padding-bottom: 8px;
+    color: #002b5b;
+}
+.sidebar-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.sidebar-card li {
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.sidebar-card li:hover {
+    background-color: #e0f2fe;
+    color: #003366;
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateX(5px);
+}
+.offer-box {
+    background-color: #fff3cd;
+    border: 2px solid #ffecb5;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.offer-box h2 {
+    font-size: 1.8rem;
+    color: #856404;
+    margin: 0 0 10px 0;
+    animation: glow 1.5s infinite alternate;
+}
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #e63946, 0 0 10px #e63946;
+    }
+    to {
+        text-shadow: 0 0 15px #00a8cc, 0 0 20px #00a8cc;
+    }
+}

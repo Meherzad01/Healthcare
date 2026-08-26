@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Gallery</title>
+    
+    <!-- External Stylesheets (Tasks 3 & 6) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+
+    <!-- Consolidated Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+        }
+
+        header {
+            background-color: #0f4c4a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Task 2: Navigation Menu Styling */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #005f73;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        nav li a {
+            display: inline-block;
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #0a9396;
+            color: #e9d8a6;
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Task 6: Gallery Grid Styling */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        figure {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        footer {
+            background-color: #0f4c4a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Laboratory Gallery</h1>
+    <p>Accurate Diagnostics for Better Healthcare</p>
+</header>
+
+<!-- Task 2: Formatted Navigation List -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+        <li><a href="test-price-table.html">Pricing</a></li>
+        <li><a href="patient-registration.html">Registration</a></li>
+        <li><a href="health-information.html">Info Portal</a></li>
+        <li><a href="media.html">Awareness</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h2>Our Infrastructure</h2>
+
+    <div class="gallery">
+        <figure class="gallery-item">
+            <a href="clinical-lab-info.html">
+                <img src="https://mtalvernia.sg/wp-content/uploads/2017/02/lab2-1024x442.jpg" alt="Clinical Laboratory main workspace" title="Clinical Laboratory" width="300" height="200">
+            </a>
+            <figcaption>Clinical Laboratory</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <a href="blood-collection-info.html">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.1rCeEcC1ShluD1sZwzBa4QHaGE?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Blood Collection Room with patient chairs" title="Blood Collection Room" width="300" height="200">
+            </a>
+            <figcaption>Blood Collection Room</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <a href="analyzer-info.html">
+                <img src="https://image.made-in-china.com/202f0j00UNDiFGyahmgE/Biobase-Bk-200-Fully-Automated-Clinical-Blood-Chemistry-Analyzermini-Biochemistry-Analyzer.webp" alt="Automated blood analyzer machine" title="Automated Analyzer" width="300" height="200">
+            </a>
+            <figcaption>Automated Analyzer</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+            <a href="sample-processing-info.html">
+                <img src="https://cdn.prod.website-files.com/621e95f9ac30687a56e4297e/65fe5b53d0fefa177146f600_V2_1710442394349_dbbb44fa-1433-43a7-8dd6-a8103443711d_HIGH_RES.png" alt="Sample processing and storage area" title="Sample Processing Area" width="300" height="200">
+            </a>
+            <figcaption>Sample Processing Area</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section>
+    <h2>Laboratory Floor Map</h2>
+    <p>Click on a section of the layout below to learn more about that area.</p>
+
+    <img src="https://www.acrossinternational.com.au/web/image/28268-29c10fb8/Chemistry%20Lab%20Equipment%20.jpg" alt="Laboratory floor layout" title="Laboratory Floor Layout" width="400" height="250" usemap="#labmap">
+
+    <map name="labmap">
+        <area shape="rect" coords="0,0,133,250" href="clinical-lab-info.html" alt="Clinical Laboratory Section">
+        <area shape="rect" coords="134,0,266,250" href="blood-collection-info.html" alt="Blood Collection Section">
+        <area shape="rect" coords="267,0,400,250" href="sample-processing-info.html" alt="Sample Processing Section">
+    </map>
+</section>
+
+<footer>
+    <p>&copy; 2026 Clinical Laboratory. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

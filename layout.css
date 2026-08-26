@@ -1,0 +1,23 @@
+.main-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 15px;
+}
+.sidebar {
+    flex: 1;
+    min-width: 250px;
+}
+.content-area {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+}
