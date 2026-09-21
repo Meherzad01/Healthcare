@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1: Registration Fee Calculation</title>
+
+    <!-- External Stylesheets (keep this file in the same folder as the project CSS) -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Consolidated Internal Stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333333;
+        }
+
+        header {
+            background-color: #0f4c4a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; color: #ffffff; }
+
+        /* Navigation Bar Styling */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #005f73;
+            text-align: center;
+        }
+
+        nav li { display: inline-block; }
+
+        nav li a {
+            display: inline-block;
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #0a9396;
+            color: #e9d8a6;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .container h2 { color: #005f73; margin-top: 0; }
+
+        .info-card {
+            background: #f0f4f8;
+            border-left: 4px solid #0056b3;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .info-card p { margin: 4px 0; }
+
+        pre.output {
+            background: #f0f4f8;
+            border-left: 4px solid #0056b3;
+            border-radius: 0 4px 4px 0;
+            padding: 12px 15px;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        footer {
+            background-color: #0f4c4a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Patient Registration Fee</h1>
+    <p>Accurate Diagnostics for Better Healthcare</p>
+</header>
+
+<!-- Navigation Links Structure -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+        <li><a href="test-price-table.html">Pricing</a></li>
+        <li><a href="patient-registration.html">Registration</a></li>
+        <li><a href="health-information.html">Info Portal</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Task 1: Patient Information and Registration Fee Calculation</h2>
+    <script>
+        // ---------- 1. Variables (different data types) ----------
+        var patientName     = "Rahul Sharma";   // string
+        var patientId       = "PAT-1001";       // string
+        var patientAge      = 65;               // number
+        var consultationFee = 500;              // number
+        var registrationFee = 100;              // number
+
+        // To accept input from the user instead, use e.g.:
+        // var patientName = prompt("Enter patient name:");
+        // var patientAge  = Number(prompt("Enter patient age:"));
+
+        // ---------- 2. Operators and expressions ----------
+        var subtotal = consultationFee + registrationFee;   // arithmetic
+        var discount = 0;
+        var isSenior = patientAge >= 60;                     // relational -> boolean
+        var registrationStatus = "Registered";
+
+        if (isSenior) {                                      // basic if statement
+            discount = subtotal * 0.10;                      // 10% senior-citizen discount
+            registrationStatus = "Registered (Senior Citizen Discount Applied)";
+        }
+
+        var totalAmount = subtotal - discount;
+
+        // ---------- 3. Message-printing methods ----------
+        // console.log() -> browser console (F12)
+        console.log("Patient Name: " + patientName);
+        console.log("Patient ID: " + patientId);
+        console.log("Total Amount: Rs. " + totalAmount);
+        console.log("Registration Status: " + registrationStatus);
+
+        // document.write() -> prints on the web page (at this position)
+        var report =
+            "<div class='info-card'>" +
+            "<p><strong>Patient Name:</strong> " + patientName + "</p>" +
+            "<p><strong>Patient ID:</strong> " + patientId + "</p>" +
+            "<p><strong>Age:</strong> " + patientAge + "</p>" +
+            "<p><strong>Subtotal (Consultation + Registration):</strong> &#8377; " + subtotal.toFixed(2) + "</p>" +
+            "<p><strong>Senior Discount:</strong> &#8377; " + discount.toFixed(2) + "</p>" +
+            "<p><strong>Total Amount Payable:</strong> &#8377; " + totalAmount.toFixed(2) + "</p>" +
+            "<p><strong>Registration Status:</strong> " + registrationStatus + "</p>" +
+            "</div>";
+        document.write(report);
+
+        // alert() -> popup box
+        alert("Patient: " + patientName + "\nID: " + patientId +
+              "\nTotal Amount: Rs. " + totalAmount.toFixed(2) +
+              "\nStatus: " + registrationStatus);
+    </script>
+</div>
+
+<footer>
+    <p>&copy; 2026 Clinical Laboratory. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

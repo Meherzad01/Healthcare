@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2: Appointment Priority</title>
+
+    <!-- External Stylesheets (keep this file in the same folder as the project CSS) -->
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Consolidated Internal Stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333333;
+        }
+
+        header {
+            background-color: #0f4c4a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; color: #ffffff; }
+
+        /* Navigation Bar Styling */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #005f73;
+            text-align: center;
+        }
+
+        nav li { display: inline-block; }
+
+        nav li a {
+            display: inline-block;
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #0a9396;
+            color: #e9d8a6;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .container h2 { color: #005f73; margin-top: 0; }
+
+        .info-card {
+            background: #f0f4f8;
+            border-left: 4px solid #0056b3;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .info-card p { margin: 4px 0; }
+
+        pre.output {
+            background: #f0f4f8;
+            border-left: 4px solid #0056b3;
+            border-radius: 0 4px 4px 0;
+            padding: 12px 15px;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        footer {
+            background-color: #0f4c4a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Appointment Priority</h1>
+    <p>Accurate Diagnostics for Better Healthcare</p>
+</header>
+
+<!-- Navigation Links Structure -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+        <li><a href="test-price-table.html">Pricing</a></li>
+        <li><a href="patient-registration.html">Registration</a></li>
+        <li><a href="health-information.html">Info Portal</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Task 2: Patient Appointment and Priority Decision</h2>
+    <div id="mainResult" class="info-card"></div>
+
+    <h3>Test Cases (one for each decision rule)</h3>
+    <table class="price-table" id="cases">
+        <thead>
+            <tr><th>Age</th><th>Temp (&deg;C)</th><th>Severity</th><th>Emergency</th><th>Recommendation</th></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        // Decision function: order of checks matters (first matching rule wins)
+        function getPriority(age, temperature, severity, emergency) {
+            if (emergency === "Yes") {
+                return "Emergency Consultation Required";
+            } else if (temperature >= 39) {
+                return "High Priority Consultation";
+            } else if (severity === "Severe") {
+                return "High Priority Consultation";
+            } else if (age >= 60 && severity === "Moderate") {
+                return "Priority Consultation";
+            } else {
+                return "Regular Consultation";
+            }
+        }
+
+        // ---------- Input parameters stored in variables ----------
+        var patientAge  = 65;
+        var temperature = 38.2;
+        var severity    = "Moderate";   // Mild / Moderate / Severe
+        var emergency   = "No";         // Yes / No
+
+        // To accept values from the user instead:
+        // var patientAge  = Number(prompt("Enter age:"));
+        // var temperature = Number(prompt("Enter temperature (C):"));
+        // var severity    = prompt("Severity (Mild/Moderate/Severe):");
+        // var emergency   = prompt("Emergency? (Yes/No):");
+
+        var recommendation = getPriority(patientAge, temperature, severity, emergency);
+
+        console.log("Age: " + patientAge + ", Temp: " + temperature +
+                    ", Severity: " + severity + ", Emergency: " + emergency);
+        console.log("Recommendation: " + recommendation);
+
+        document.getElementById("mainResult").innerHTML =
+            "<p><strong>Age:</strong> " + patientAge + "</p>" +
+            "<p><strong>Temperature:</strong> " + temperature + " &deg;C</p>" +
+            "<p><strong>Severity:</strong> " + severity + "</p>" +
+            "<p><strong>Emergency:</strong> " + emergency + "</p>" +
+            "<p><strong>Recommendation:</strong> " + recommendation + "</p>";
+
+        alert("Recommendation: " + recommendation);
+
+        // ---------- Test all rules ----------
+        var testCases = [
+            [30, 37.0, "Mild",     "Yes"],   // Emergency
+            [30, 39.5, "Mild",     "No"],    // High priority (temperature)
+            [30, 37.0, "Severe",   "No"],    // High priority (severity)
+            [65, 37.0, "Moderate", "No"],    // Priority (senior + moderate)
+            [30, 37.0, "Mild",     "No"]     // Regular
+        ];
+
+        var tbody = document.querySelector("#cases tbody");
+        for (var i = 0; i < testCases.length; i++) {
+            var t = testCases[i];
+            var result = getPriority(t[0], t[1], t[2], t[3]);
+            console.log("Case " + (i + 1) + ": " + result);
+            tbody.innerHTML += "<tr><td>" + t[0] + "</td><td>" + t[1] + "</td><td>" +
+                               t[2] + "</td><td>" + t[3] + "</td><td>" + result + "</td></tr>";
+        }
+    </script>
+</div>
+
+<footer>
+    <p>&copy; 2026 Clinical Laboratory. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

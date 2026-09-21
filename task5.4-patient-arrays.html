@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4: Patient Age Arrays</title>
+
+    <!-- External Stylesheets (keep this file in the same folder as the project CSS) -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Consolidated Internal Stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333333;
+        }
+
+        header {
+            background-color: #0f4c4a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; color: #ffffff; }
+
+        /* Navigation Bar Styling */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #005f73;
+            text-align: center;
+        }
+
+        nav li { display: inline-block; }
+
+        nav li a {
+            display: inline-block;
+            color: #ffffff;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #0a9396;
+            color: #e9d8a6;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .container h2 { color: #005f73; margin-top: 0; }
+
+        .info-card {
+            background: #f0f4f8;
+            border-left: 4px solid #0056b3;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .info-card p { margin: 4px 0; }
+
+        pre.output {
+            background: #f0f4f8;
+            border-left: 4px solid #0056b3;
+            border-radius: 0 4px 4px 0;
+            padding: 12px 15px;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        footer {
+            background-color: #0f4c4a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Patient Age Analysis</h1>
+    <p>Accurate Diagnostics for Better Healthcare</p>
+</header>
+
+<!-- Navigation Links Structure -->
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="laboratory-tests.html">Laboratory Tests</a></li>
+        <li><a href="test-price-table.html">Pricing</a></li>
+        <li><a href="patient-registration.html">Registration</a></li>
+        <li><a href="health-information.html">Info Portal</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Task 4: Patient Age and Appointment Data Using Arrays</h2>
+    <pre class="output" id="output"></pre>
+
+    <script>
+        function print(message) {
+            console.log(message);
+            document.getElementById("output").textContent += message + "\n";
+        }
+
+        let patientAges = [22, 35, 67, 45, 29, 72, 56, 18, 64, 40];
+
+        // 1. Display all ages (for loop)
+        function displayAges(arr) {
+            print("All patient ages:");
+            for (let i = 0; i < arr.length; i++) {
+                print("  Patient " + (i + 1) + ": " + arr[i]);
+            }
+        }
+
+        // 2. Minimum age (manual loop)
+        function findMin(arr) {
+            let min = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] < min) min = arr[i];
+            }
+            return min;
+        }
+
+        // 3. Maximum age (Math.max with spread)
+        function findMax(arr) {
+            return Math.max(...arr);
+        }
+
+        // 4. Average age (reduce)
+        function findAverage(arr) {
+            let sum = arr.reduce(function (total, age) { return total + age; }, 0);
+            return sum / arr.length;
+        }
+
+        // 5. Senior citizens (age >= 60)
+        function countSeniors(arr) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] >= 60) count++;
+            }
+            return count;
+        }
+
+        // 6. Patients below 18 (filter)
+        function countBelow18(arr) {
+            return arr.filter(function (age) { return age < 18; }).length;
+        }
+
+        // 7. Patients older than 60 (filter)
+        function ageAbove60(arr) {
+            return arr.filter(function (age) { return age > 60; });
+        }
+
+        // ---------- Run ----------
+        displayAges(patientAges);
+        print("");
+        print("Minimum age: " + findMin(patientAges));
+        print("Maximum age: " + findMax(patientAges));
+        print("Average age: " + findAverage(patientAges).toFixed(2));
+        print("Senior citizens (60+): " + countSeniors(patientAges));
+        print("Patients below 18: " + countBelow18(patientAges));
+        print("Patients older than 60: " + ageAbove60(patientAges).join(", "));
+    </script>
+</div>
+
+<footer>
+    <p>&copy; 2026 Clinical Laboratory. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
